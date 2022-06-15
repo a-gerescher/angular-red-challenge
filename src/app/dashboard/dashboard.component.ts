@@ -4,12 +4,15 @@ import { catchError, map, shareReplay, startWith, tap } from 'rxjs/operators';
 import { SiteTitleService } from '@red-probeaufgabe/core';
 import { FhirSearchFn, IFhirPatient, IFhirPractitioner, IFhirSearchResponse } from '@red-probeaufgabe/types';
 import { IUnicornTableColumn } from '@red-probeaufgabe/ui';
-import { AbstractSearchFacadeService } from '@red-probeaufgabe/search';
+import { SearchFacadeService } from '@red-probeaufgabe/search';
+
+// provider added. fix
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
+  providers: [ SearchFacadeService ],
 })
 export class DashboardComponent {
   // Init unicorn columns to display
@@ -45,7 +48,7 @@ export class DashboardComponent {
     startWith(0),
   );
 
-  constructor(private siteTitleService: SiteTitleService, private searchFacade: AbstractSearchFacadeService) {
+  constructor(private siteTitleService: SiteTitleService, private searchFacade: SearchFacadeService) {
     this.siteTitleService.setSiteTitle('Dashboard');
   }
 
