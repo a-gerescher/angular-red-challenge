@@ -1,0 +1,25 @@
+<div class="detail">
+  
+  
+  <ng-container *ngIf="data && data.resourceType == 'Practitioner'; else noData">
+    <h1>Practitioner</h1>
+    <p>Name: {{preparedData.name}}</p>
+    <p>ID: {{preparedData.id}}</p>
+    <p *ngIf="preparedData.address">Address: {{preparedData.address}}</p>
+    <p *ngFor="let tel of preparedData.telecom">
+      {{tel.system}} {{tel.use}}: {{tel.value}}
+    </p>
+  </ng-container>
+  
+  <ng-template #noData>
+    <h1>Patient</h1>
+    <p>Name: {{preparedData.name}}</p>
+    <p>ID: {{preparedData.id}}</p>
+    <p>Birthday: {{preparedData.birthday}}</p>
+    <p>Gender: {{preparedData.gender}}</p>
+    
+    <p *ngIf="preparedData.address">Address: {{preparedData.address}}</p>
+    <p></p>
+  </ng-template>
+  <br />
+</div>
