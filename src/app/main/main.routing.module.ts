@@ -8,10 +8,7 @@ const routes: Routes = [
     path: '',
     component: MainComponent,
     children: [
-      {
-        path: 'dashboard',
-        loadChildren: () => import('../dashboard/dashboard.module').then((m) => m.DashboardModule),
-      },
+      { path: 'dashboard', loadChildren: () => import('../dashboard/dashboard.module').then((m) => m.DashboardModule) },
       { path: 'imprint', loadChildren: () => import('../imprint/imprint.module').then((m) => m.ImprintModule) },
       { path: '**', redirectTo: '/dashboard' },
     ],

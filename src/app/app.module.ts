@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { UiModule } from './ui/ui.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { DetailModule } from './detail/detail.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule, UiModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, UiModule, AppRoutingModule, BrowserAnimationsModule, CommonModule, DetailModule],
   providers: [],
   bootstrap: [AppComponent],
 })

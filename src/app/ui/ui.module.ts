@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
 import { GridContainerComponent } from './grid-container/grid-container.component';
 import { UnicornTableComponent } from './unicorn-table/unicorn-table.component';
 import { MatSelectModule } from '@angular/material/select';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRippleModule } from '@angular/material/core';
 import { DialogDetailRowComponent } from './dialog-detail-row/dialog-detail-row.component';
@@ -44,6 +44,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
     MatCardModule,
     MatSelectModule,
     MatRippleModule,
+    FormsModule
   ],
   declarations: [
     SidenavComponent,

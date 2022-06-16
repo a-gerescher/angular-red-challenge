@@ -33,7 +33,7 @@ export class FhirUtilService {
    * Prepare FHIR data for detail view
    * @param data
    */
-  prepareData(data: IFhirPatient | IFhirPractitioner): IPreparedIFhirPatient | IPreparedIFhirPractitioner {
+  public static prepareData(data: IFhirPatient | IFhirPractitioner): IPreparedIFhirPatient | IPreparedIFhirPractitioner {
     const address = data.address?.map((resourceAddress: IFhirResourceAddress) =>
       FhirUtilService.getFhirAddressRepresentation(resourceAddress),
     );
