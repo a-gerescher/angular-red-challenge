@@ -1,1 +1,29 @@
 <!-- implement search form here -->
+<div class="mat-elevation-z7">
+  <form [formGroup]="searchForm">
+
+    <mat-form-field class="search-input" appearance="fill">
+      <mat-label>Search text</mat-label>
+      <input type="text" matInput formControlName="searchText" [errorStateMatcher]="matcher"
+             placeholder="Search for text">
+      <mat-hint *ngIf="searchForm.valid">Search for A-Z, a-z, 0-9, no spaces or special chars allowed.</mat-hint>
+      <mat-error *ngIf="searchForm?.controls['searchText'].hasError('forbiddenSpaces')">
+        Please enter no spaces
+      </mat-error>
+      <mat-error *ngIf="searchForm?.controls['searchText'].hasError('forbiddenChars')">
+        Char is not allowed.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="select-input" appearance="fill">
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="searchFuncSelect" [(value)]="selectedValue">
+        <mat-option *ngFor="let sType of searchTypes | keyvalue" [value]="sType.value">
+          {{sType.key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    
+  </form>
+</div>
